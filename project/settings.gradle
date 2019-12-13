@@ -1,0 +1,3 @@
+include 'core', 'dynamic'
+project(':core').name = 'OpenActivities-website-core'
+project(':dynamic').name = 'OpenActivities-website-dynamic'
