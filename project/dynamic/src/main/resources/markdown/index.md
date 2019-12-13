@@ -16,3 +16,7 @@ Der Quellcode für diese Website findet sich im Repository
 und erste Daten werden in
 [Open-Activities/data](https://github.com/Open-Activities/data)
 gesammelt.
+Künsterlisches Material sammeln wir in [Open-Activities/artwork](https://github.com/Open-Activities/artwork).
+
+Für den Hackathon gibt es ein HackMD:
+<https://hackmd.io/@sebkur/OpenActivities-ideas>
