@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 import org.openactivities.BaseGenerator;
 import org.openactivities.Events;
@@ -48,7 +49,7 @@ public class ListGenerator extends BaseGenerator
 	}
 
 	private static DateTimeFormatter formatter = DateTimeFormatter
-			.ofPattern("yyyy-MM-dd HH:mm");
+			.ofPattern("EEEE dd.MM.yyyy HH:mm").withLocale(Locale.GERMAN);
 
 	private void entry(Event event)
 	{
