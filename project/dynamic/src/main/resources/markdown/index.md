@@ -17,6 +17,8 @@ und erste Daten werden in
 [Open-Activities/data](https://github.com/Open-Activities/data)
 gesammelt.
 Künsterlisches Material sammeln wir in [Open-Activities/artwork](https://github.com/Open-Activities/artwork).
+Der Crawler wird im [Open-Activities/crawler](https://github.com/Open-Activities/crawler)
+entwickelt.
 
 Für den Hackathon gibt es ein HackMD:
 <https://hackmd.io/@sebkur/OpenActivities-ideas>
