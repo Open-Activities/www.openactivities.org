@@ -23,6 +23,9 @@ subprojects {
 
     repositories {
         maven {
+            url '/home/z/github/Open-Activities/maven'
+        }
+        maven {
             url 'http://mvn.topobyte.de'
         }
         mavenCentral()
@@ -54,6 +57,7 @@ project(':OpenActivities-website-core') {
         compile 'de.topobyte:webpaths-core:0.0.2'
         compile 'de.topobyte:pagegen-core:0.1.0'
         compile 'de.topobyte:pagegen-bootstrap:0.1.1'
+        compile 'org.openactivities:crawler-core:0.0.1'
         compile 'commons-io:commons-io:2.4'
 
         testCompile 'junit:junit:4.12'

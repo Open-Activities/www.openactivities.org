@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.openactivities.pages.IndexGenerator;
+import org.openactivities.pages.ListGenerator;
 import org.openactivities.pages.MarkdownGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -51,6 +52,8 @@ public class IndexServlet extends HttpServlet
 			} else if (first.equals("privacy-policy")) {
 				generator = new MarkdownGenerator(context, path,
 						"markdown/privacy-policy.md");
+			} else if (first.equals("list")) {
+				generator = new ListGenerator(context, path);
 			}
 		}
 

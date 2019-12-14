@@ -31,6 +31,10 @@ public class MainMenu extends Menu
 
 		addBrand(brand);
 
+		String listLink = resolver.getLink(WebPaths.get("/list"));
+		Element linkList = a(listLink).inner("Liste");
+		addMain(linkList, false);
+
 		String aboutLink = "/";
 
 		Element linkAbout = a(aboutLink).inner("About");

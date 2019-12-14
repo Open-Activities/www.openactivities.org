@@ -34,6 +34,12 @@ public class InitListener implements ServletContextListener
 			logger.error("Unable to load configuration", e);
 		}
 
+		try {
+			Events.INSTANCE.load();
+		} catch (IOException e) {
+			logger.warn("Error while loading events", e);
+		}
+
 		logger.info("done");
 	}
 
