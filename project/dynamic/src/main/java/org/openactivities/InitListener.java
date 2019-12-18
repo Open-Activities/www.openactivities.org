@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import ch.qos.logback.classic.LoggerContext;
+import de.topobyte.ioutils.ShellPaths;
 
 @WebListener
 public class InitListener implements ServletContextListener
@@ -26,13 +27,17 @@ public class InitListener implements ServletContextListener
 
 		InputStream input = Thread.currentThread().getContextClassLoader()
 				.getResourceAsStream("config.properties");
-		Properties config = new Properties();
+		Properties configProperties = new Properties();
 		try {
-			config.load(input);
+			configProperties.load(input);
 			input.close();
 		} catch (IOException e) {
 			logger.error("Unable to load configuration", e);
 		}
+
+		Config config = Config.INSTANCE;
+		config.setRepoData(
+				ShellPaths.resolve(configProperties.getProperty("data.dir")));
 
 		try {
 			Events.INSTANCE.load();

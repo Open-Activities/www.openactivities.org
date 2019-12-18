@@ -14,7 +14,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import de.topobyte.melon.paths.PathUtil;
-import de.topobyte.system.utils.SystemPaths;
 
 public class Events
 {
@@ -32,7 +31,7 @@ public class Events
 
 	public void load() throws IOException
 	{
-		Path repoData = SystemPaths.HOME.resolve("github/Open-Activities/data");
+		Path repoData = Config.INSTANCE.getRepoData();
 		Path type1 = repoData.resolve("type1");
 
 		FileCache fileCache = new FileCache();
