@@ -1,7 +1,9 @@
 package org.openactivities.pages;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -41,11 +43,29 @@ public class ListGenerator extends BaseGenerator
 		Collections.sort(list,
 				(o1, o2) -> o1.getStartDate().compareTo(o2.getStartDate()));
 
-		for (Event event : list) {
+		// Skip all events that are too old to display
+		int i = 0;
+		for (; i < list.size(); i++) {
+			Event event = list.get(i);
+			if (!isTooOld(event)) {
+				break;
+			}
+		}
+		// and display the remaining ones.
+		for (; i < list.size(); i++) {
+			Event event = list.get(i);
 			entry(event);
 		}
 
 		footer();
+	}
+
+	private LocalDateTime now = LocalDateTime.now();
+
+	private boolean isTooOld(Event event)
+	{
+		long hoursUntil = now.until(event.getStartDate(), ChronoUnit.HOURS);
+		return hoursUntil < -16;
 	}
 
 	private static DateTimeFormatter formatter = DateTimeFormatter
