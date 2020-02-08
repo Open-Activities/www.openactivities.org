@@ -3,6 +3,7 @@ package org.openactivities;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -40,7 +41,8 @@ public class Events
 		for (Path file : files) {
 			logger.info("Loading file: " + file);
 			try (InputStream input = Files.newInputStream(file)) {
-				List<String> lines = IOUtils.readLines(input);
+				List<String> lines = IOUtils.readLines(input,
+						StandardCharsets.UTF_8);
 				String start = lines.get(0);
 				String linksPattern = lines.get(1);
 				List<Event> es = load(fileCache, start, linksPattern);
