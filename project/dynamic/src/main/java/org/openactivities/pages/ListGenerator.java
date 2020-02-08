@@ -15,9 +15,9 @@ import org.openactivities.model.Event;
 import org.openactivities.model.Location;
 
 import de.topobyte.jsoup.HTML;
+import de.topobyte.jsoup.bootstrap3.components.CollapsiblePanel;
 import de.topobyte.jsoup.components.Div;
 import de.topobyte.jsoup.components.P;
-import de.topobyte.jsoup.components.bootstrap3.CollapsiblePanel;
 import de.topobyte.pagegen.core.Context;
 import de.topobyte.webpaths.WebPath;
 
