@@ -3,8 +3,8 @@ package org.openactivities.pages;
 import java.io.IOException;
 
 import org.openactivities.BaseGenerator;
-import org.openactivities.Markdown;
 
+import de.topobyte.jsoup.Markdown;
 import de.topobyte.pagegen.core.Context;
 import de.topobyte.webpaths.WebPath;
 
